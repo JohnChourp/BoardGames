@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityInitialize">
+    tools:context=".ActivityNewGame">
 
     <TextView
         android:id="@+id/textView"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_DieNumber"
+        android:id="@+id/et_DieNumberNew"
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:autofillHints=""
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <Button
-        android:id="@+id/bt_Submit"
+        android:id="@+id/bt_SubmitNew"
         android:layout_width="135dp"
         android:layout_height="62dp"
         android:layout_marginStart="136dp"

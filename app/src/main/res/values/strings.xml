@@ -7,4 +7,6 @@
     <string name="type_dice_number">Type Dice Number:</string>
     <string name="_0_1_2_3">0,1,2,3</string>
     <string name="submit">Submit</string>
+    <string name="new_game">NEW GAME</string>
+    <string name="load_game">LOAD GAME</string>
 </resources>
