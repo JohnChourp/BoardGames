@@ -1,11 +1,11 @@
 package com.example.boardgames;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityPlay extends AppCompatActivity {
 
@@ -22,6 +22,6 @@ public class ActivityPlay extends AppCompatActivity {
         tv_DieResult = findViewById(R.id.tv_DieResult);
         bt_RollDie = findViewById(R.id.bt_RollDie);
 
-        bt_RollDie.setOnClickListener(v -> tv_DieResult.setText("The Die Rolled = "+die.rollDie()));
+        bt_RollDie.setOnClickListener(v -> tv_DieResult.setText("" + die.rollDie()));
     }
 }
