@@ -31,6 +31,7 @@ public class ActivityNewGame extends AppCompatActivity {
         bt_SubmitNew.setOnClickListener(v -> {
 
             Die.dieNumber = Integer.parseInt(et_DieNumberNew.getText().toString());
+
             try {
                 jsonObject.put("dieNumber", Die.dieNumber);
                 String userString = jsonObject.toString();

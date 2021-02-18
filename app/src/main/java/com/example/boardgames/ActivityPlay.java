@@ -22,6 +22,6 @@ public class ActivityPlay extends AppCompatActivity {
         tv_DieResult = findViewById(R.id.tv_DieResult);
         bt_RollDie = findViewById(R.id.bt_RollDie);
 
-        bt_RollDie.setOnClickListener(v -> tv_DieResult.setText("" + die.rollDie()));
+        bt_RollDie.setOnClickListener(v -> tv_DieResult.setText("" + die.setDieRolledNumber()));
     }
 }
