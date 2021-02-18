@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BoardGames</string>
+    <string name="start">Start</string>
+    <string name="todo">TODO</string>
+    <string name="die_result">Die Result</string>
+    <string name="roll_the_die">Roll The Die</string>
+    <string name="roll_die">roll die</string>
 </resources>
