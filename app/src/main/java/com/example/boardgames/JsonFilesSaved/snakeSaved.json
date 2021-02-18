@@ -1,0 +1,16 @@
+{
+"dieNumber":1,
+"GameStart":"NoGameStart",
+"Interaction":{"InteractType":"NoInteraction"},
+"Board":{"boardType":{"type":"Bounce"},"squares":[{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"GotoSquare":36,"SquareInfo":"Ladder"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"GotoSquare":4,"SquareInfo":"Snake"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"GotoSquare":23,"SquareInfo":"Snake"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"GotoSquare":10,"SquareInfo":"Snake"},{"SquareInfo":"Empty"},{"GotoSquare":91,"SquareInfo":"Ladder"},{"GotoSquare":7,"SquareInfo":"Snake"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"GotoSquare":75,"SquareInfo":"Ladder"},{"GotoSquare":19,"SquareInfo":"Snake"},{"SquareInfo":"Empty"},{"GotoSquare":84,"SquareInfo":"Ladder"},{"SquareInfo":"Empty"},{"GotoSquare":21,"SquareInfo":"Snake"},{"GotoSquare":85,"SquareInfo":"Ladder"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"GotoSquare":88,"SquareInfo":"Ladder"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"GotoSquare":31,"SquareInfo":"Snake"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"GotoSquare":1,"SquareInfo":"Snake"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"GotoSquare":94,"SquareInfo":"Ladder"},{"SquareInfo":"Empty"},{"GotoSquare":82,"SquareInfo":"Ladder"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"GotoSquare":13,"SquareInfo":"Snake"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"GotoSquare":34,"SquareInfo":"Snake"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"GotoSquare":26,"SquareInfo":"Snake"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"SquareInfo":"Empty"},{"GotoSquare":29,"SquareInfo":"Snake"},{"SquareInfo":"Empty"}]},
+"turn":2,
+"playerList":
+	{
+	"player3":
+		{"round":0,"canPlayAtStart":true,"name":"Jim","lostTurn":false,"currentPos":97,"hasImmunity":false},
+	"player1":
+		{"round":0,"canPlayAtStart":true,"name":"John","lostTurn":false,"currentPos":26,"hasImmunity":false},
+	"player2":
+		{"round":0,"canPlayAtStart":true,"name":"George","lostTurn":false,"currentPos":99,"hasImmunity":false}
+	}
+}

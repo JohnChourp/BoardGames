@@ -2,7 +2,9 @@
     <string name="app_name">BoardGames</string>
     <string name="start">Start</string>
     <string name="todo">TODO</string>
-    <string name="die_result">Die Result</string>
-    <string name="roll_the_die">Roll The Die</string>
+    <string name="die_result">Die Result = </string>
     <string name="roll_die">roll die</string>
+    <string name="type_dice_number">Type Dice Number:</string>
+    <string name="_0_1_2_3">0,1,2,3</string>
+    <string name="submit">Submit</string>
 </resources>

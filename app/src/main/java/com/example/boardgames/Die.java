@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Die {
 
-    private int dieNumber = 1;
+    public static int dieNumber;
     private int dieRolledNumber;
     private final Random dieRand = new Random(System.currentTimeMillis());
 
@@ -15,10 +15,6 @@ public class Die {
 
     public int getDieNumber() {
         return dieNumber;
-    }
-
-    public void setDieNumber(int dieNumber) {
-        this.dieNumber = dieNumber;
     }
 
     public int getDieRolledNumber() {
