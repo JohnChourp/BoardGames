@@ -16,7 +16,6 @@ public class ActivityMain extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bt_Start = findViewById(R.id.bt_Start);
         bt_Start.setOnClickListener(v -> openActivityInitialize());
-
     }
 
     private void openActivityInitialize() {
