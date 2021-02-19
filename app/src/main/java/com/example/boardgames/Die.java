@@ -25,9 +25,8 @@ public class Die{
     }
 
     public int setDieRolledNumber() {
-        Random dieRand = new Random();
-        int dieBound = dieNumber*dieSides;
-        dieRolledNumber = dieRand.nextInt(dieBound) + 1;
+        Random dieRand = new Random(System.currentTimeMillis());
+        dieRolledNumber = dieRand.nextInt(dieNumber*dieSides) + 1;
         return dieRolledNumber;
     }
 
