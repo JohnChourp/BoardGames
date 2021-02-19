@@ -2,13 +2,32 @@ package com.example.boardgames;
 
 import java.util.Random;
 
-public class Die {
-    private final Random dieRand = new Random(System.currentTimeMillis());
-    public static int dieNumber;
+public class Die{
+
+    private int dieNumber;
+    private int dieSides;
     private int dieRolledNumber;
 
+    public int getDieNumber() {
+        return dieNumber;
+    }
+
+    public void setDieNumber(int dieNumber) {
+        this.dieNumber = dieNumber;
+    }
+
+    public int getDieSides() {
+        return dieSides;
+    }
+
+    public void setDieSides(int dieSides) {
+        this.dieSides = dieSides;
+    }
+
     public int setDieRolledNumber() {
-        dieRolledNumber = dieRand.nextInt(dieNumber * 6) + 1;
+        Random dieRand = new Random();
+        int dieBound = dieNumber*dieSides;
+        dieRolledNumber = dieRand.nextInt(dieBound) + 1;
         return dieRolledNumber;
     }
 

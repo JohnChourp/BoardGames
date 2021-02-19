@@ -7,6 +7,30 @@
     tools:context=".ActivityNewGame">
 
     <TextView
+        android:id="@+id/textView4"
+        android:layout_width="206dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="132dp"
+        android:text="@string/type_dice_sides"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_DieSidesNew"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="76dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/_0_1_2_3"
+        android:inputType="number"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <TextView
         android:id="@+id/textView"
         android:layout_width="206dp"
         android:layout_height="45dp"
