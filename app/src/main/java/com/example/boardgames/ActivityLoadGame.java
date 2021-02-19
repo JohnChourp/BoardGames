@@ -3,7 +3,7 @@ package com.example.boardgames;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,18 +17,17 @@ import java.io.IOException;
 
 public class ActivityLoadGame extends AppCompatActivity {
 
-    EditText et_DieNumberLoad,et_DieSidesLoad;
+    TextView tv_DieNumber, tv_DieSides;
     Button bt_SubmitLoad;
-
-    Die die = new Die();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_load_game);
-        et_DieNumberLoad = findViewById(R.id.et_DieNumberLoad);
+
+        tv_DieNumber = findViewById(R.id.tv_DieNumber);
+        tv_DieSides = findViewById(R.id.tv_DieSides);
         bt_SubmitLoad = findViewById(R.id.bt_SubmitLoad);
-        et_DieSidesLoad = findViewById(R.id.et_DieSidesLoad);
 
         File file = new File(getApplicationContext().getFilesDir(), "snake.json");
         FileReader fileReader;
@@ -44,18 +43,15 @@ public class ActivityLoadGame extends AppCompatActivity {
             bufferedReader.close();
             String response = stringBuilder.toString();
             JSONObject jsonObject = new JSONObject(response);
-            et_DieNumberLoad.setText(jsonObject.get("dieNumber").toString());
-            et_DieSidesLoad.setText(jsonObject.get("dieSides").toString());
+
+            tv_DieNumber.setText(jsonObject.get("dieNumber").toString());
+            tv_DieSides.setText(jsonObject.get("dieSides").toString());
 
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
 
-        bt_SubmitLoad.setOnClickListener(v -> {
-            die.setDieNumber(Integer.parseInt(et_DieNumberLoad.getText().toString()));
-            die.setDieSides(Integer.parseInt(et_DieSidesLoad.getText().toString()));
-            openActivityPlay();
-        });
+        bt_SubmitLoad.setOnClickListener(v -> openActivityPlay());
     }
 
     private void openActivityPlay() {

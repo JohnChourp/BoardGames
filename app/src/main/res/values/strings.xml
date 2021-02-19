@@ -10,4 +10,6 @@
     <string name="new_game">NEW GAME</string>
     <string name="load_game">LOAD GAME</string>
     <string name="type_dice_sides">Type Dice Sides:</string>
+    <string name="add_new_player">ADD NEW PLAYER</string>
+    <string name="type_name">Type Name</string>
 </resources>
