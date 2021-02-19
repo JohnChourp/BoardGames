@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -43,10 +44,10 @@ public class ActivityPlay extends AppCompatActivity {
             }
             bufferedReader.close();
             String response = stringBuilder.toString();
-            JSONObject jsonObject = new JSONObject(response);
+            JSONArray joArray = new JSONArray(response);
 
-            die.setDieNumber(jsonObject.getInt("dieNumber"));
-            die.setDieSides(jsonObject.getInt("dieSides"));
+            die.setDieNumber(joArray.getJSONObject(0).getInt("dieNumber"));
+            die.setDieSides(joArray.getJSONObject(0).getInt("dieSides"));
             bt_RollDie.setOnClickListener(v -> tv_DieResult.setText("" + die.setDieRolledNumber()));
 
         } catch (IOException | JSONException e) {
