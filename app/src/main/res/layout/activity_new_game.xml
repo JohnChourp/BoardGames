@@ -10,78 +10,84 @@
     <EditText
         android:id="@+id/et_PlayerName1"
         android:layout_width="383dp"
-        android:layout_height="41dp"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="220dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/type_name"
         android:inputType="textPersonName"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_PlayerName2"
         android:layout_width="383dp"
-        android:layout_height="41dp"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="288dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/type_name"
         android:inputType="textPersonName"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_PlayerName3"
         android:layout_width="383dp"
-        android:layout_height="41dp"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="360dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/type_name"
         android:inputType="textPersonName"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_PlayerName4"
         android:layout_width="383dp"
-        android:layout_height="41dp"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="428dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/type_name"
         android:inputType="textPersonName"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_PlayerName5"
         android:layout_width="383dp"
-        android:layout_height="41dp"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="496dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/type_name"
         android:inputType="textPersonName"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_PlayerName6"
         android:layout_width="383dp"
-        android:layout_height="41dp"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="568dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/type_name"
         android:inputType="textPersonName"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -21,7 +22,9 @@ public class ActivityNewGame extends AppCompatActivity {
     EditText et_DieNumberNew, et_DieSidesNew,et_PlayerName1,et_PlayerName2,et_PlayerName3,et_PlayerName4,et_PlayerName5,et_PlayerName6;
     Button bt_SubmitNew,bt_addFirstPlayer1,bt_addFirstPlayer2,bt_addFirstPlayer3,bt_addFirstPlayer4,bt_addFirstPlayer5,bt_addFirstPlayer6;
 
-    JSONObject jsonObject = new JSONObject();
+    JSONObject joDie = new JSONObject();
+    JSONObject joPlayer = new JSONObject();
+    JSONArray joArray = new JSONArray();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +51,31 @@ public class ActivityNewGame extends AppCompatActivity {
 
         bt_SubmitNew.setOnClickListener(v -> {
             try {
-                jsonObject.put("dieNumber", Integer.parseInt(et_DieNumberNew.getText().toString()));
-                jsonObject.put("dieSides", Integer.parseInt(et_DieSidesNew.getText().toString()));
-                String userString = jsonObject.toString();
+                joDie.put("dieNumber", Integer.parseInt(et_DieNumberNew.getText().toString()));
+                joDie.put("dieSides", Integer.parseInt(et_DieSidesNew.getText().toString()));
+
+                if(et_PlayerName1.getVisibility() == View.VISIBLE)
+                    joPlayer.put("player1Name",et_PlayerName1.getText().toString());
+                if(et_PlayerName2.getVisibility() == View.VISIBLE)
+                    joPlayer.put("player2Name",et_PlayerName2.getText().toString());
+                if(et_PlayerName3.getVisibility() == View.VISIBLE)
+                    joPlayer.put("player3Name",et_PlayerName3.getText().toString());
+                if(et_PlayerName4.getVisibility() == View.VISIBLE)
+                    joPlayer.put("player4Name",et_PlayerName4.getText().toString());
+                if(et_PlayerName5.getVisibility() == View.VISIBLE)
+                    joPlayer.put("player5Name",et_PlayerName5.getText().toString());
+                if(et_PlayerName6.getVisibility() == View.VISIBLE)
+                    joPlayer.put("player6Name",et_PlayerName6.getText().toString());
+
+                joArray.put(0, joDie);
+                joArray.put(1, joPlayer);
+                String jsonArrayString = joArray.toString();
+                System.out.println(jsonArrayString);
 
                 File file = new File(getApplicationContext().getFilesDir(), "snake.json");
                 FileWriter fileWriter = new FileWriter(file);
                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                bufferedWriter.write(userString);
+                bufferedWriter.write(jsonArrayString);
                 bufferedWriter.close();
             } catch (JSONException | IOException e) {
                 e.printStackTrace();
@@ -70,31 +90,41 @@ public class ActivityNewGame extends AppCompatActivity {
         et_PlayerName5.setVisibility(View.GONE);
         et_PlayerName6.setVisibility(View.GONE);
 
+        bt_addFirstPlayer2.setVisibility(View.GONE);
+        bt_addFirstPlayer3.setVisibility(View.GONE);
+        bt_addFirstPlayer4.setVisibility(View.GONE);
+        bt_addFirstPlayer5.setVisibility(View.GONE);
+        bt_addFirstPlayer6.setVisibility(View.GONE);
+
         bt_addFirstPlayer1.setOnClickListener(v -> {
             bt_addFirstPlayer1.setVisibility(View.GONE);
+            bt_addFirstPlayer2.setVisibility(View.VISIBLE);
             et_PlayerName1.setVisibility(View.VISIBLE);
         });
         bt_addFirstPlayer2.setOnClickListener(v -> {
             bt_addFirstPlayer2.setVisibility(View.GONE);
+            bt_addFirstPlayer3.setVisibility(View.VISIBLE);
             et_PlayerName2.setVisibility(View.VISIBLE);
         });
         bt_addFirstPlayer3.setOnClickListener(v -> {
             bt_addFirstPlayer3.setVisibility(View.GONE);
+            bt_addFirstPlayer4.setVisibility(View.VISIBLE);
             et_PlayerName3.setVisibility(View.VISIBLE);
         });
         bt_addFirstPlayer4.setOnClickListener(v -> {
             bt_addFirstPlayer4.setVisibility(View.GONE);
+            bt_addFirstPlayer5.setVisibility(View.VISIBLE);
             et_PlayerName4.setVisibility(View.VISIBLE);
         });
         bt_addFirstPlayer5.setOnClickListener(v -> {
             bt_addFirstPlayer5.setVisibility(View.GONE);
+            bt_addFirstPlayer6.setVisibility(View.VISIBLE);
             et_PlayerName5.setVisibility(View.VISIBLE);
         });
         bt_addFirstPlayer6.setOnClickListener(v -> {
             bt_addFirstPlayer6.setVisibility(View.GONE);
             et_PlayerName6.setVisibility(View.VISIBLE);
         });
-
     }
 
     private void openActivityPlay() {
