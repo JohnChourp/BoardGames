@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BoardGames">
-        <activity android:name=".ActivityInitialize" />
+        <activity android:name=".ActivityLoadGame" />
+        <activity android:name=".ActivityNewGame" />
         <activity android:name=".ActivityPlay" />
         <activity android:name=".ActivityMain">
             <intent-filter>

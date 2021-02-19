@@ -1,6 +1,6 @@
 package com.example.boardgames;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,20 +15,19 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class ActivityPlay extends AppCompatActivity {
+public class ActivityLoadGame extends AppCompatActivity {
 
-    TextView tv_DieResult;
-    Button bt_RollDie;
+    TextView tv_DieNumber, tv_DieSides;
+    Button bt_SubmitLoad;
 
-    Die die = new Die();
-
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_play);
-        tv_DieResult = findViewById(R.id.tv_DieResult);
-        bt_RollDie = findViewById(R.id.bt_RollDie);
+        setContentView(R.layout.activity_load_game);
+
+        tv_DieNumber = findViewById(R.id.tv_DieNumber);
+        tv_DieSides = findViewById(R.id.tv_DieSides);
+        bt_SubmitLoad = findViewById(R.id.bt_SubmitLoad);
 
         File file = new File(getApplicationContext().getFilesDir(), "snake.json");
         FileReader fileReader;
@@ -45,12 +44,19 @@ public class ActivityPlay extends AppCompatActivity {
             String response = stringBuilder.toString();
             JSONObject jsonObject = new JSONObject(response);
 
-            die.setDieNumber(jsonObject.getInt("dieNumber"));
-            die.setDieSides(jsonObject.getInt("dieSides"));
-            bt_RollDie.setOnClickListener(v -> tv_DieResult.setText("" + die.setDieRolledNumber()));
+            tv_DieNumber.setText(jsonObject.get("dieNumber").toString());
+            tv_DieSides.setText(jsonObject.get("dieSides").toString());
 
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
+
+        bt_SubmitLoad.setOnClickListener(v -> openActivityPlay());
     }
+
+    private void openActivityPlay() {
+        Intent intent = new Intent(this, ActivityPlay.class);
+        startActivity(intent);
+    }
+
 }
