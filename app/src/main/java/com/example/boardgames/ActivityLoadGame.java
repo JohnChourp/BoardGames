@@ -73,7 +73,6 @@ public class ActivityLoadGame extends AppCompatActivity {
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
-
         bt_SubmitLoad.setOnClickListener(v -> openActivityPlay());
     }
 
