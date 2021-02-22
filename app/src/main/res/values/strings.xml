@@ -14,4 +14,5 @@
     <string name="type_name">Type Name</string>
     <string name="_0_99">0-99</string>
     <string name="_1_99">1-99</string>
+    <string name="exit_notification_app">EXIT NOTIFICATION APP!</string>
 </resources>
