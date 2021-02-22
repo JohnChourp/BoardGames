@@ -22,13 +22,15 @@ import java.io.IOException;
 public class ActivityPlay extends AppCompatActivity {
 
     TextView tv_DieResult;
-    Button bt_MoveRight,bt_MoveLeft,bt_MoveUp;
+    Button bt_MoveRight, bt_MoveLeft, bt_MoveUp;
     ImageView iv_player1;
 
     Die die = new Die();
 
-    int y1 = 1730;
-    int y2 = 1730;
+    int yStart = 1730;
+    int yEnd = 155;
+    int xStart = 11;
+    int xEnd = 983;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -64,169 +66,79 @@ public class ActivityPlay extends AppCompatActivity {
         }
 
         bt_MoveRight.setOnClickListener(v -> {
-            tv_DieResult.setText("" + die.setDieRolledNumber());
-            if (iv_player1.getX() < 983 && iv_player1.getY() == y1)
-                iv_player1.setX(iv_player1.getX() + 108 * die.getDieRolledNumber());
-            if (iv_player1.getX() == 983 && iv_player1.getY() == y1) {
-                bt_MoveRight.setVisibility(View.GONE);
-                bt_MoveUp.setVisibility(View.VISIBLE);
-            }
-            if (iv_player1.getX() == 1091 && iv_player1.getY() == y1) {
-                iv_player1.setX(iv_player1.getX() - 108);
-                iv_player1.setY(iv_player1.getY() - 175);
-                y1 = y1 - 175;
-                bt_MoveRight.setVisibility(View.GONE);
-                bt_MoveLeft.setVisibility(View.VISIBLE);
-            }
-            if (iv_player1.getX() == 1199 && iv_player1.getY() == y1) {
-                iv_player1.setX(iv_player1.getX() - 108 * 2);
-                iv_player1.setY(iv_player1.getY() - 175);
-                y1 = y1 - 175;
-                bt_MoveRight.setVisibility(View.GONE);
-                bt_MoveLeft.setVisibility(View.VISIBLE);
-            }
-            if (iv_player1.getX() == 1307 && iv_player1.getY() == y1) {
-                iv_player1.setX(iv_player1.getX() - 108 * 3);
-                iv_player1.setY(iv_player1.getY() - 175);
-                y1 = y1 - 175;
-                bt_MoveRight.setVisibility(View.GONE);
-                bt_MoveLeft.setVisibility(View.VISIBLE);
-            }
-            if (iv_player1.getX() == 1415 && iv_player1.getY() == y1) {
-                iv_player1.setX(iv_player1.getX() - 108 * 4);
-                iv_player1.setY(iv_player1.getY() - 175);
-                y1 = y1 - 175;
-                bt_MoveRight.setVisibility(View.GONE);
-                bt_MoveLeft.setVisibility(View.VISIBLE);
-            }
-            if (iv_player1.getX() == 1523 && iv_player1.getY() == y1) {
-                iv_player1.setX(iv_player1.getX() - 108 * 5);
-                iv_player1.setY(iv_player1.getY() - 175);
-                y1 = y1 - 175;
-                bt_MoveRight.setVisibility(View.GONE);
-                bt_MoveLeft.setVisibility(View.VISIBLE);
-            }
-        });
+            iv_player1.setX(iv_player1.getX() + (108 * die.getDieRolledNumber()));
 
-        bt_MoveLeft.setOnClickListener(v -> {
-            if (iv_player1.getX() > 11 && iv_player1.getY() == y1)
-                iv_player1.setX(iv_player1.getX() - 108 * die.getDieRolledNumber());
-            if (iv_player1.getX() == 11 && iv_player1.getY() == y1) {
-                bt_MoveLeft.setVisibility(View.GONE);
+            if (iv_player1.getX() == xEnd) {
+                bt_MoveRight.setVisibility(View.GONE);
                 bt_MoveUp.setVisibility(View.VISIBLE);
             }
-            if (iv_player1.getX() == -97 && iv_player1.getY() == y1) {
-                iv_player1.setX(iv_player1.getX() + 108);
+
+            if (iv_player1.getX() > xEnd) {
                 iv_player1.setY(iv_player1.getY() - 175);
-                y1 = y1 - 175;
-                bt_MoveLeft.setVisibility(View.GONE);
-                bt_MoveRight.setVisibility(View.VISIBLE);
+                float temp = iv_player1.getX();
+                iv_player1.setX(xEnd);
+                temp = iv_player1.getX() - (108 * (((temp - iv_player1.getX()) / 108) - 1));
+
+                iv_player1.setX(temp);
+                bt_MoveRight.setVisibility(View.GONE);
+                bt_MoveLeft.setVisibility(View.VISIBLE);
             }
-            if (iv_player1.getX() == -205 && iv_player1.getY() == y1) {
-                iv_player1.setX(iv_player1.getX() + 108 * 2);
-                iv_player1.setY(iv_player1.getY() - 175);
-                y1 = y1 - 175;
-                bt_MoveLeft.setVisibility(View.GONE);
-                bt_MoveRight.setVisibility(View.VISIBLE);
-            }
-            if (iv_player1.getX() == -313 && iv_player1.getY() == y1) {
-                iv_player1.setX(iv_player1.getX() + 108 * 3);
-                iv_player1.setY(iv_player1.getY() - 175);
-                y1 = y1 - 175;
-                bt_MoveLeft.setVisibility(View.GONE);
-                bt_MoveRight.setVisibility(View.VISIBLE);
-            }
-            if (iv_player1.getX() == -421 && iv_player1.getY() == y1) {
-                iv_player1.setX(iv_player1.getX() + 108 * 4);
-                iv_player1.setY(iv_player1.getY() - 175);
-                y1 = y1 - 175;
-                bt_MoveLeft.setVisibility(View.GONE);
-                bt_MoveRight.setVisibility(View.VISIBLE);
-            }
-            if (iv_player1.getX() == -529 && iv_player1.getY() == y1) {
-                iv_player1.setX(iv_player1.getX() + 108 * 5);
-                iv_player1.setY(iv_player1.getY() - 175);
-                y1 = y1 - 175;
-                bt_MoveLeft.setVisibility(View.GONE);
-                bt_MoveRight.setVisibility(View.VISIBLE);
-            }
+
+            tv_DieResult.setText("" + die.setDieRolledNumber());
         });
 
         bt_MoveUp.setOnClickListener(v -> {
-            if (iv_player1.getX() == 11 && iv_player1.getY() == 1730) {
-                iv_player1.setY(iv_player1.getY() - 175);
-                y1 = y1 - 175;
-                bt_MoveUp.setVisibility(View.GONE);
-                bt_MoveRight.setVisibility(View.VISIBLE);
-            }
-            if (iv_player1.getX() == 11 && iv_player1.getY() == 1555) {
-                iv_player1.setY(iv_player1.getY() - 175*2);
-                iv_player1.setX(iv_player1.getX() + 108 * 2);
-                y1 = y1 - 175;
-                bt_MoveUp.setVisibility(View.GONE);
-                bt_MoveRight.setVisibility(View.VISIBLE);
-            }
-            if (iv_player1.getX() == 11 && iv_player1.getY() == 1380) {
-                iv_player1.setY(iv_player1.getY() - 175*3);
-                iv_player1.setX(iv_player1.getX() + 108 * 3);
-                y1 = y1 - 175;
-                bt_MoveUp.setVisibility(View.GONE);
-                bt_MoveRight.setVisibility(View.VISIBLE);
-            }
-            if (iv_player1.getX() == 11 && iv_player1.getY() == 1205) {
-                iv_player1.setY(iv_player1.getY() - 175*4);
-                iv_player1.setX(iv_player1.getX() + 108 * 4);
-                y1 = y1 - 175;
-                bt_MoveUp.setVisibility(View.GONE);
-                bt_MoveRight.setVisibility(View.VISIBLE);
-            }
-            if (iv_player1.getX() == 11 && iv_player1.getY() == 1030) {
-                iv_player1.setY(iv_player1.getY() - 175*5);
-                iv_player1.setX(iv_player1.getX() + 108 * 5);
-                y1 = y1 - 175;
-                bt_MoveUp.setVisibility(View.GONE);
-                bt_MoveRight.setVisibility(View.VISIBLE);
-            }
+            iv_player1.setY(iv_player1.getY() - 175);
 
+            if (iv_player1.getX() == xEnd) {
+                iv_player1.setX(iv_player1.getX() - (108 * die.getDieRolledNumber() - 1));
 
-            if (iv_player1.getX() == 983 && iv_player1.getY() == 1730) {
-                iv_player1.setY(iv_player1.getY() - 175);
-                y1 = y1 - 175;
                 bt_MoveUp.setVisibility(View.GONE);
                 bt_MoveLeft.setVisibility(View.VISIBLE);
             }
-            if (iv_player1.getX() == 983 && iv_player1.getY() == 1555) {
-                iv_player1.setY(iv_player1.getY() - 175*2);
-                iv_player1.setX(iv_player1.getX() + 108 * 2);
-                y1 = y1 - 175;
+            if (iv_player1.getX() == xStart) {
+                iv_player1.setX(iv_player1.getX() + (108 * die.getDieRolledNumber() - 1));
+
                 bt_MoveUp.setVisibility(View.GONE);
-                bt_MoveLeft.setVisibility(View.VISIBLE);
+                bt_MoveRight.setVisibility(View.VISIBLE);
             }
-            if (iv_player1.getX() == 983 && iv_player1.getY() == 1380) {
-                iv_player1.setY(iv_player1.getY() - 175*3);
-                iv_player1.setX(iv_player1.getX() + 108 * 3);
-                y1 = y1 - 175;
-                bt_MoveUp.setVisibility(View.GONE);
-                bt_MoveLeft.setVisibility(View.VISIBLE);
-            }
-            if (iv_player1.getX() == 983 && iv_player1.getY() == 1205) {
-                iv_player1.setY(iv_player1.getY() - 175*4);
-                iv_player1.setX(iv_player1.getX() + 108 * 4);
-                y1 = y1 - 175;
-                bt_MoveUp.setVisibility(View.GONE);
-                bt_MoveLeft.setVisibility(View.VISIBLE);
-            }
-            if (iv_player1.getX() == 983 && iv_player1.getY() == 1030) {
-                iv_player1.setY(iv_player1.getY() - 175*5);
-                iv_player1.setX(iv_player1.getX() + 108 * 5);
-                y1 = y1 - 175;
-                bt_MoveUp.setVisibility(View.GONE);
-                bt_MoveLeft.setVisibility(View.VISIBLE);
-            }
+            tv_DieResult.setText("" + die.setDieRolledNumber());
+            bt_MoveUp.setVisibility(View.GONE);
         });
 
-        bt_MoveLeft.setVisibility(View.GONE);
+        bt_MoveLeft.setOnClickListener(v -> {
+            iv_player1.setX(iv_player1.getX() - (108 * die.getDieRolledNumber()));
+
+            if (iv_player1.getX() == xStart) {
+                bt_MoveLeft.setVisibility(View.GONE);
+                bt_MoveUp.setVisibility(View.VISIBLE);
+            }
+
+            if (iv_player1.getX() < xStart) {
+                iv_player1.setY(iv_player1.getY() - 175);
+                float temp = iv_player1.getX();
+                iv_player1.setX(xStart);
+                temp = iv_player1.getX() + (108 * ((((temp - iv_player1.getX()) * (-1)) / 108) - 1));
+
+                iv_player1.setX(temp);
+
+                bt_MoveLeft.setVisibility(View.GONE);
+                bt_MoveRight.setVisibility(View.VISIBLE);
+            }
+
+            if (iv_player1.getY() < yEnd) {
+                iv_player1.setX(xStart);
+                iv_player1.setY(yEnd);
+                bt_MoveLeft.setVisibility(View.GONE);
+                bt_MoveRight.setVisibility(View.GONE);
+                bt_MoveUp.setVisibility(View.GONE);
+                Toast.makeText(this, "!!!You Won!!!", Toast.LENGTH_SHORT).show();
+            }
+            tv_DieResult.setText("" + die.setDieRolledNumber());
+        });
+
         bt_MoveUp.setVisibility(View.GONE);
+        bt_MoveLeft.setVisibility(View.GONE);
     }
 
     @Override
