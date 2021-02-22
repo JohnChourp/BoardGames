@@ -211,6 +211,7 @@ public class ActivityNewGame extends AppCompatActivity {
     }
 
     private void openActivityPlay() {
+        finish();
         Intent intent = new Intent(this, ActivityPlay.class);
         startActivity(intent);
     }

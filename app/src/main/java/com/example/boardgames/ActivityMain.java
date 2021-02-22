@@ -25,11 +25,13 @@ public class ActivityMain extends AppCompatActivity {
     }
 
     private void openActivityNewGame() {
+        finish();
         Intent intent = new Intent(this, ActivityNewGame.class);
         startActivity(intent);
     }
 
     private void openActivityLoadGame() {
+        finish();
         Intent intent = new Intent(this, ActivityLoadGame.class);
         startActivity(intent);
     }

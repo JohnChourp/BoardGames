@@ -57,6 +57,7 @@ public class ActivityPlay extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        finish();
         Intent intent = new Intent(this, ActivityMain.class);
         startActivity(intent);
     }
