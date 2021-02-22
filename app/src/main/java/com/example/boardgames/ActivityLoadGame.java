@@ -51,7 +51,6 @@ public class ActivityLoadGame extends AppCompatActivity {
             }
             bufferedReader.close();
             String response = stringBuilder.toString();
-
             JSONArray joArray = new JSONArray(response);
 
             tv_DieNumber.setText(joArray.getJSONObject(0).get("dieNumber").toString());
