@@ -52,7 +52,6 @@ public class ActivityPlay extends AppCompatActivity {
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
