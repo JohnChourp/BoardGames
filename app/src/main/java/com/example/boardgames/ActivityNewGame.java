@@ -24,8 +24,8 @@ public class ActivityNewGame extends AppCompatActivity {
     Button bt_SubmitNew, bt_addFirstPlayer1, bt_addFirstPlayer2, bt_addFirstPlayer3, bt_addFirstPlayer4, bt_addFirstPlayer5, bt_addFirstPlayer6;
     ImageView iv_delete1, iv_delete2, iv_delete3, iv_delete4, iv_delete5, iv_delete6;
 
+    JSONArray joArray = new JSONArray();
     JSONObject joDie = new JSONObject();
-    JSONArray joArrayPlayer = new JSONArray();
     JSONObject joPlayerName = new JSONObject();
     JSONObject joPlayerCurrentPos = new JSONObject();
 
@@ -91,10 +91,10 @@ public class ActivityNewGame extends AppCompatActivity {
                             joPlayerCurrentPos.put("player6CurrentPos", 0);
                         }
 
-                        joArrayPlayer.put(0, joDie);
-                        joArrayPlayer.put(1, joPlayerName);
-                        joArrayPlayer.put(2,joPlayerCurrentPos);
-                        String jsonArrayString = joArrayPlayer.toString();
+                        joArray.put(0, joDie);
+                        joArray.put(1, joPlayerName);
+                        joArray.put(2,joPlayerCurrentPos);
+                        String jsonArrayString = joArray.toString();
                         System.out.println(jsonArrayString);
 
                         File file = new File(getApplicationContext().getFilesDir(), "snake.json");
@@ -211,6 +211,7 @@ public class ActivityNewGame extends AppCompatActivity {
     }
 
     private void openActivityPlay() {
+        finish();
         Intent intent = new Intent(this, ActivityPlay.class);
         startActivity(intent);
     }

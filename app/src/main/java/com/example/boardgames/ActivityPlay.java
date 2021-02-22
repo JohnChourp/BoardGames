@@ -52,11 +52,11 @@ public class ActivityPlay extends AppCompatActivity {
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
     public void onBackPressed() {
+        finish();
         Intent intent = new Intent(this, ActivityMain.class);
         startActivity(intent);
     }
