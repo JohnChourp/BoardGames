@@ -2,7 +2,7 @@ package com.example.boardgames;
 
 import java.util.Random;
 
-public class Die{
+public class Die {
 
     private int dieNumber;
     private int dieSides;
@@ -26,7 +26,7 @@ public class Die{
 
     public int setDieRolledNumber() {
         Random dieRand = new Random(System.currentTimeMillis());
-        dieRolledNumber = dieRand.nextInt(dieNumber*dieSides) + 1;
+        dieRolledNumber = dieRand.nextInt(dieNumber * dieSides) + 1;
         return dieRolledNumber;
     }
 

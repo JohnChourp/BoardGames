@@ -20,9 +20,9 @@ import java.io.IOException;
 
 public class ActivityNewGame extends AppCompatActivity {
 
-    EditText et_DieNumberNew, et_DieSidesNew,et_PlayerName1,et_PlayerName2,et_PlayerName3,et_PlayerName4,et_PlayerName5,et_PlayerName6;
-    Button bt_SubmitNew,bt_addFirstPlayer1,bt_addFirstPlayer2,bt_addFirstPlayer3,bt_addFirstPlayer4,bt_addFirstPlayer5,bt_addFirstPlayer6;
-    ImageView iv_delete1,iv_delete2,iv_delete3,iv_delete4,iv_delete5,iv_delete6;
+    EditText et_DieNumberNew, et_DieSidesNew, et_PlayerName1, et_PlayerName2, et_PlayerName3, et_PlayerName4, et_PlayerName5, et_PlayerName6;
+    Button bt_SubmitNew, bt_addFirstPlayer1, bt_addFirstPlayer2, bt_addFirstPlayer3, bt_addFirstPlayer4, bt_addFirstPlayer5, bt_addFirstPlayer6;
+    ImageView iv_delete1, iv_delete2, iv_delete3, iv_delete4, iv_delete5, iv_delete6;
 
     JSONObject joDie = new JSONObject();
     JSONObject joPlayer = new JSONObject();
@@ -60,24 +60,23 @@ public class ActivityNewGame extends AppCompatActivity {
 
         bt_SubmitNew.setOnClickListener(v -> {
             try {
-                if(!et_DieNumberNew.getText().toString().isEmpty() && !et_DieSidesNew.getText().toString().isEmpty()) {
-                    if (Integer.parseInt(et_DieNumberNew.getText().toString()) > 0 && Integer.parseInt(et_DieNumberNew.getText().toString()) <= 99 && Integer.parseInt(et_DieSidesNew.getText().toString()) > 0 && Integer.parseInt(et_DieSidesNew.getText().toString()) <= 99)
-                    {
+                if (!et_DieNumberNew.getText().toString().isEmpty() && !et_DieSidesNew.getText().toString().isEmpty()) {
+                    if (Integer.parseInt(et_DieNumberNew.getText().toString()) > 0 && Integer.parseInt(et_DieNumberNew.getText().toString()) <= 99 && Integer.parseInt(et_DieSidesNew.getText().toString()) > 0 && Integer.parseInt(et_DieSidesNew.getText().toString()) <= 99) {
                         joDie.put("dieNumber", Integer.parseInt(et_DieNumberNew.getText().toString()));
                         joDie.put("dieSides", Integer.parseInt(et_DieSidesNew.getText().toString()));
 
-                        if(et_PlayerName1.getVisibility() == View.VISIBLE && !(et_PlayerName1.getText().toString().equals("")))
-                            joPlayer.put("player1Name",et_PlayerName1.getText().toString());
-                        if(et_PlayerName2.getVisibility() == View.VISIBLE && !(et_PlayerName2.getText().toString().equals("")))
-                            joPlayer.put("player2Name",et_PlayerName2.getText().toString());
-                        if(et_PlayerName3.getVisibility() == View.VISIBLE && !(et_PlayerName3.getText().toString().equals("")))
-                            joPlayer.put("player3Name",et_PlayerName3.getText().toString());
-                        if(et_PlayerName4.getVisibility() == View.VISIBLE && !(et_PlayerName4.getText().toString().equals("")))
-                            joPlayer.put("player4Name",et_PlayerName4.getText().toString());
-                        if(et_PlayerName5.getVisibility() == View.VISIBLE && !(et_PlayerName5.getText().toString().equals("")))
-                            joPlayer.put("player5Name",et_PlayerName5.getText().toString());
-                        if(et_PlayerName6.getVisibility() == View.VISIBLE && !(et_PlayerName6.getText().toString().equals("")))
-                            joPlayer.put("player6Name",et_PlayerName6.getText().toString());
+                        if (et_PlayerName1.getVisibility() == View.VISIBLE && !(et_PlayerName1.getText().toString().equals("")))
+                            joPlayer.put("player1Name", et_PlayerName1.getText().toString());
+                        if (et_PlayerName2.getVisibility() == View.VISIBLE && !(et_PlayerName2.getText().toString().equals("")))
+                            joPlayer.put("player2Name", et_PlayerName2.getText().toString());
+                        if (et_PlayerName3.getVisibility() == View.VISIBLE && !(et_PlayerName3.getText().toString().equals("")))
+                            joPlayer.put("player3Name", et_PlayerName3.getText().toString());
+                        if (et_PlayerName4.getVisibility() == View.VISIBLE && !(et_PlayerName4.getText().toString().equals("")))
+                            joPlayer.put("player4Name", et_PlayerName4.getText().toString());
+                        if (et_PlayerName5.getVisibility() == View.VISIBLE && !(et_PlayerName5.getText().toString().equals("")))
+                            joPlayer.put("player5Name", et_PlayerName5.getText().toString());
+                        if (et_PlayerName6.getVisibility() == View.VISIBLE && !(et_PlayerName6.getText().toString().equals("")))
+                            joPlayer.put("player6Name", et_PlayerName6.getText().toString());
 
                         joArray.put(0, joDie);
                         joArray.put(1, joPlayer);
@@ -90,13 +89,11 @@ public class ActivityNewGame extends AppCompatActivity {
                         bufferedWriter.write(jsonArrayString);
                         bufferedWriter.close();
                         openActivityPlay();
-                    }
-                    else{
+                    } else {
                         et_DieNumberNew.setError("Type 1-99");
                         et_DieSidesNew.setError("Type 1-99");
                     }
-                }
-                else{
+                } else {
                     et_DieNumberNew.setError("Type 1-99");
                     et_DieSidesNew.setError("Type 1-99");
                 }
