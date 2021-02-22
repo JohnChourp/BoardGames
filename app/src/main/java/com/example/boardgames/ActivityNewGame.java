@@ -25,8 +25,9 @@ public class ActivityNewGame extends AppCompatActivity {
     ImageView iv_delete1, iv_delete2, iv_delete3, iv_delete4, iv_delete5, iv_delete6;
 
     JSONObject joDie = new JSONObject();
-    JSONObject joPlayer = new JSONObject();
-    JSONArray joArray = new JSONArray();
+    JSONArray joArrayPlayer = new JSONArray();
+    JSONObject joPlayerName = new JSONObject();
+    JSONObject joPlayerCurrentPos = new JSONObject();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,22 +66,35 @@ public class ActivityNewGame extends AppCompatActivity {
                         joDie.put("dieNumber", Integer.parseInt(et_DieNumberNew.getText().toString()));
                         joDie.put("dieSides", Integer.parseInt(et_DieSidesNew.getText().toString()));
 
-                        if (et_PlayerName1.getVisibility() == View.VISIBLE && !(et_PlayerName1.getText().toString().equals("")))
-                            joPlayer.put("player1Name", et_PlayerName1.getText().toString());
-                        if (et_PlayerName2.getVisibility() == View.VISIBLE && !(et_PlayerName2.getText().toString().equals("")))
-                            joPlayer.put("player2Name", et_PlayerName2.getText().toString());
-                        if (et_PlayerName3.getVisibility() == View.VISIBLE && !(et_PlayerName3.getText().toString().equals("")))
-                            joPlayer.put("player3Name", et_PlayerName3.getText().toString());
-                        if (et_PlayerName4.getVisibility() == View.VISIBLE && !(et_PlayerName4.getText().toString().equals("")))
-                            joPlayer.put("player4Name", et_PlayerName4.getText().toString());
-                        if (et_PlayerName5.getVisibility() == View.VISIBLE && !(et_PlayerName5.getText().toString().equals("")))
-                            joPlayer.put("player5Name", et_PlayerName5.getText().toString());
-                        if (et_PlayerName6.getVisibility() == View.VISIBLE && !(et_PlayerName6.getText().toString().equals("")))
-                            joPlayer.put("player6Name", et_PlayerName6.getText().toString());
+                        if (et_PlayerName1.getVisibility() == View.VISIBLE && !(et_PlayerName1.getText().toString().equals(""))){
+                            joPlayerName.put("player1Name", et_PlayerName1.getText().toString());
+                            joPlayerCurrentPos.put("player1CurrentPos", 0);
+                        }
+                        if (et_PlayerName2.getVisibility() == View.VISIBLE && !(et_PlayerName2.getText().toString().equals(""))){
+                            joPlayerName.put("player2Name", et_PlayerName2.getText().toString());
+                            joPlayerCurrentPos.put("player2CurrentPos", 0);
+                        }
+                        if (et_PlayerName3.getVisibility() == View.VISIBLE && !(et_PlayerName3.getText().toString().equals(""))) {
+                            joPlayerName.put("player3Name", et_PlayerName3.getText().toString());
+                            joPlayerCurrentPos.put("player3CurrentPos", 0);
+                        }
+                        if (et_PlayerName4.getVisibility() == View.VISIBLE && !(et_PlayerName4.getText().toString().equals(""))){
+                            joPlayerName.put("player4Name", et_PlayerName4.getText().toString());
+                            joPlayerCurrentPos.put("player4CurrentPos", 0);
+                        }
+                        if (et_PlayerName5.getVisibility() == View.VISIBLE && !(et_PlayerName5.getText().toString().equals(""))){
+                            joPlayerName.put("player5Name", et_PlayerName5.getText().toString());
+                            joPlayerCurrentPos.put("player5CurrentPos", 0);
+                        }
+                        if (et_PlayerName6.getVisibility() == View.VISIBLE && !(et_PlayerName6.getText().toString().equals(""))){
+                            joPlayerName.put("player6Name", et_PlayerName6.getText().toString());
+                            joPlayerCurrentPos.put("player6CurrentPos", 0);
+                        }
 
-                        joArray.put(0, joDie);
-                        joArray.put(1, joPlayer);
-                        String jsonArrayString = joArray.toString();
+                        joArrayPlayer.put(0, joDie);
+                        joArrayPlayer.put(1, joPlayerName);
+                        joArrayPlayer.put(2,joPlayerCurrentPos);
+                        String jsonArrayString = joArrayPlayer.toString();
                         System.out.println(jsonArrayString);
 
                         File file = new File(getApplicationContext().getFilesDir(), "snake.json");
