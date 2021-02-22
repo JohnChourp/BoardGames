@@ -70,7 +70,6 @@ public class ActivityNewGame extends AppCompatActivity {
                             joPlayerName.put("player1Name", et_PlayerName1.getText().toString());
                             joPlayerCurrentPos.put("player1CurrentPos", 0);
                         }
-
                         if (et_PlayerName2.getVisibility() == View.VISIBLE && !(et_PlayerName2.getText().toString().equals(""))){
                             joPlayerName.put("player2Name", et_PlayerName2.getText().toString());
                             joPlayerCurrentPos.put("player2CurrentPos", 0);
