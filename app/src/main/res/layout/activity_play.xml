@@ -10,19 +10,39 @@
         android:id="@+id/tv_DieResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="4dp"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/bt_RollDie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginBottom="64dp"
-        android:text="@string/roll_die"
+        android:id="@+id/bt_MoveUp"
+        android:layout_width="71dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/bt_MoveLeft"
+        android:layout_width="71dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/bt_MoveRight"
+        android:layout_width="71dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -30,10 +50,34 @@
         android:id="@+id/textView2"
         android:layout_width="104dp"
         android:layout_height="31dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
         android:text="@string/die_result"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_board"
+        android:layout_width="390dp"
+        android:layout_height="637dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="44dp"
+        android:contentDescription="@string/todo"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/snakes_and_ladders_the_board" />
+
+    <ImageView
+        android:id="@+id/iv_player1"
+        android:layout_width="37dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/player1"
+        android:contentDescription="@string/todo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

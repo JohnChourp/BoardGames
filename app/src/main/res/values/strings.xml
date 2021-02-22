@@ -14,4 +14,8 @@
     <string name="type_name">Type Name</string>
     <string name="_1_99">1–99</string>
     <string name="exit_notification_app">EXIT NOTIFICATION APP!</string>
+    <string name="roll">ROLL</string>
+    <string name="up">UP</string>
+    <string name="left">LEFT</string>
+    <string name="right">RIGHT</string>
 </resources>
