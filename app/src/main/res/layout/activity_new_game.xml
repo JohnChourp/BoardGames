@@ -9,10 +9,10 @@
 
     <EditText
         android:id="@+id/et_PlayerName1"
-        android:layout_width="383dp"
+        android:layout_width="310dp"
         android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="216dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/type_name"
@@ -23,10 +23,10 @@
 
     <EditText
         android:id="@+id/et_PlayerName2"
-        android:layout_width="383dp"
+        android:layout_width="310dp"
         android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="288dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="284dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/type_name"
@@ -37,10 +37,10 @@
 
     <EditText
         android:id="@+id/et_PlayerName3"
-        android:layout_width="383dp"
+        android:layout_width="310dp"
         android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="356dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/type_name"
@@ -51,10 +51,10 @@
 
     <EditText
         android:id="@+id/et_PlayerName4"
-        android:layout_width="383dp"
+        android:layout_width="310dp"
         android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="428dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="424dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/type_name"
@@ -65,10 +65,10 @@
 
     <EditText
         android:id="@+id/et_PlayerName5"
-        android:layout_width="383dp"
+        android:layout_width="310dp"
         android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="496dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="492dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/type_name"
@@ -79,10 +79,10 @@
 
     <EditText
         android:id="@+id/et_PlayerName6"
-        android:layout_width="383dp"
+        android:layout_width="310dp"
         android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="568dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="564dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/type_name"
@@ -107,7 +107,7 @@
         android:layout_width="206dp"
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="276dp"
+        android:layout_marginTop="272dp"
         android:text="@string/add_new_player"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -157,6 +157,72 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/iv_delete1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="216dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/delete" />
+
+    <ImageView
+        android:id="@+id/iv_delete2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="280dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/delete" />
+
+    <ImageView
+        android:id="@+id/iv_delete3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="356dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/delete" />
+
+    <ImageView
+        android:id="@+id/iv_delete4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="424dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/delete" />
+
+    <ImageView
+        android:id="@+id/iv_delete5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="492dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/delete" />
+
+    <ImageView
+        android:id="@+id/iv_delete6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="564dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/delete" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="206dp"
@@ -186,7 +252,7 @@
         android:layout_marginTop="76dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/_0_1_2_3"
+        android:hint="@string/_1_99"
         android:inputType="number"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -199,7 +265,7 @@
         android:layout_height="45dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/_0_1_2_3"
+        android:hint="@string/_1_99"
         android:inputType="number"
         android:textAlignment="center"
         android:textSize="24sp"

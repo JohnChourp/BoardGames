@@ -1,6 +1,7 @@
 package com.example.boardgames;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -9,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -49,9 +49,15 @@ public class ActivityPlay extends AppCompatActivity {
             die.setDieNumber(joArray.getJSONObject(0).getInt("dieNumber"));
             die.setDieSides(joArray.getJSONObject(0).getInt("dieSides"));
             bt_RollDie.setOnClickListener(v -> tv_DieResult.setText("" + die.setDieRolledNumber()));
-
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, ActivityMain.class);
+        startActivity(intent);
     }
 }
