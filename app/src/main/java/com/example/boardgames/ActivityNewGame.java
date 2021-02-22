@@ -157,6 +157,7 @@ public class ActivityNewGame extends AppCompatActivity {
             et_PlayerName6.setVisibility(View.VISIBLE);
             iv_delete6.setVisibility(View.VISIBLE);
         });
+
         iv_delete1.setOnClickListener(v -> {
             iv_delete1.setVisibility(View.GONE);
             et_PlayerName1.setVisibility(View.GONE);
